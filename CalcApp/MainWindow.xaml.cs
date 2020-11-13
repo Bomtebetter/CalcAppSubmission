@@ -25,19 +25,37 @@ namespace CalcApp
             InitializeComponent();
         }
 
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if(e.Source is Button button)
+            {
+                _CalcText.Text += button.Content;
+            }
+
+            
+        }
+
+        private void Button_Rot(object sender, RoutedEventArgs e)
+        {
+            if (e.Source is Button button)
+            {
+              //  _CalcText.Text == Math.Sqrt(_CalcText);
+            }
 
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Calc(object sender, RoutedEventArgs e)
         {
-
+            if (e.Source is Button button)
+            {
+             // _CalcText.Text = _CalcText.Text.;
+            }
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void Button_Del(object sender, RoutedEventArgs e)
         {
-
+            _CalcText.Text = _CalcText.Text.Substring(0, _CalcText.Text.Length - 1);
         }
     }
 }
