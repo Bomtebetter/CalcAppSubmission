@@ -40,22 +40,62 @@ namespace CalcApp
         {
             if (e.Source is Button button)
             {
-              //  _CalcText.Text == Math.Sqrt(_CalcText);
+                var result = Math.Sqrt(Convert.ToDouble(_CalcText.Text));
+                _CalcText.Text = Convert.ToString(result);
             }
 
         }
-
+        
         private void Button_Calc(object sender, RoutedEventArgs e)
         {
             if (e.Source is Button button)
             {
-             // _CalcText.Text = _CalcText.Text.;
+                double result = 0;
+                if (_CalcText.Text.Contains('/'))
+                {
+                    var number1 = Convert.ToDouble(_CalcText.Text.Split('/')[0]);
+                    var number2 = Convert.ToDouble(_CalcText.Text.Split('/')[1]);
+                    result =  number1 / number2;
+                }
+                if (_CalcText.Text.Contains('*'))
+                {
+                    var number1 = Convert.ToDouble(_CalcText.Text.Split('*')[0]);
+                    var number2 = Convert.ToDouble(_CalcText.Text.Split('*')[1]);
+                    result = number1 * number2;
+                }
+                if (_CalcText.Text.Contains('+'))
+                {
+                    var number1 = Convert.ToDouble(_CalcText.Text.Split('+')[0]);
+                    var number2 = Convert.ToDouble(_CalcText.Text.Split('+')[1]);
+                    result = number1 + number2;
+                }
+                if (_CalcText.Text.Contains('-'))
+                {
+                    var number1 = Convert.ToDouble(_CalcText.Text.Split('-')[0]);
+                    var number2 = Convert.ToDouble(_CalcText.Text.Split('-')[1]);
+                    result = number1 - number2;
+                }
+
+                _CalcText.Text = Convert.ToString(result);
             }
         }
 
         private void Button_Del(object sender, RoutedEventArgs e)
         {
-            _CalcText.Text = _CalcText.Text.Substring(0, _CalcText.Text.Length - 1);
+            if (e.Source is Button button)
+            {
+                if (_CalcText.Text.Length > 0)
+                {
+                    _CalcText.Text = _CalcText.Text.Substring(0, _CalcText.Text.Length - 1);
+                }
+                else
+                {
+
+                }
+            }
+            
         }
+
+        
     }
 }

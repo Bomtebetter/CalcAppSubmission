@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CalcApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid Background="#E8C547">
+    <Grid Background="#5C80BC">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -47,9 +47,9 @@
         <Button Foreground="#CDD1C4" Background="#4D5061" Click="Button_Click" Grid.Row="6" Grid.Column="1" Content="1"/>
         <Button Foreground="#CDD1C4" Background="#4D5061" Click="Button_Click" Grid.Row="6" Grid.Column="2" Content="2"/>
         <Button Foreground="#CDD1C4" Background="#4D5061" Click="Button_Click" Grid.Row="6" Grid.Column="3" Content="3"/>
-        <Button Foreground="#CDD1C4" Background="#4D5061" Click="Button_Click" Grid.Row="6" Grid.Column="4" Content="+"/>
+        <Button Foreground="#CDD1C4" Background="#4D5061" Click="Button_Click"  Grid.Row="6" Grid.Column="4" Content="+"/>
 
-        <Button Foreground="#CDD1C4" Background="#4D5061" Click="Button_Click" Grid.Row="7" Grid.Column="1" Content="."/>
+        <Button Foreground="#CDD1C4" Background="#4D5061" Click="Button_Click" Grid.Row="7" Grid.Column="1" Content=","/>
         <Button Foreground="#CDD1C4" Background="#4D5061" Click="Button_Click" Grid.Row="7" Grid.Column="2" Content="0"/>
         <Button Foreground="#CDD1C4" Background="#4D5061" Click="Button_Del" Grid.Row="7" Grid.Column="3" Content="del"/>
         <Button Foreground="#CDD1C4" Background="#4D5061" Click="Button_Calc" Grid.Row="7" Grid.Column="4" Content="calc"/>
