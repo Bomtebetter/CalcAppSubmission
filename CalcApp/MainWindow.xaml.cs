@@ -25,15 +25,12 @@ namespace CalcApp
             InitializeComponent();
         }
 
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if(e.Source is Button button)
             {
                 _CalcText.Text += button.Content;
-            }
-
-            
+            }          
         }
 
         private void Button_Rot(object sender, RoutedEventArgs e)
@@ -43,7 +40,6 @@ namespace CalcApp
                 var result = Math.Sqrt(Convert.ToDouble(_CalcText.Text));
                 _CalcText.Text = Convert.ToString(result);
             }
-
         }
         
         private void Button_Calc(object sender, RoutedEventArgs e)
@@ -57,26 +53,36 @@ namespace CalcApp
                     var number2 = Convert.ToDouble(_CalcText.Text.Split('/')[1]);
                     result =  number1 / number2;
                 }
-                if (_CalcText.Text.Contains('*'))
+                else if (_CalcText.Text.Contains('*'))
                 {
                     var number1 = Convert.ToDouble(_CalcText.Text.Split('*')[0]);
                     var number2 = Convert.ToDouble(_CalcText.Text.Split('*')[1]);
                     result = number1 * number2;
                 }
-                if (_CalcText.Text.Contains('+'))
+                else if (_CalcText.Text.Contains('+'))
                 {
                     var number1 = Convert.ToDouble(_CalcText.Text.Split('+')[0]);
                     var number2 = Convert.ToDouble(_CalcText.Text.Split('+')[1]);
                     result = number1 + number2;
                 }
-                if (_CalcText.Text.Contains('-'))
+                else if (_CalcText.Text.Contains('-'))
                 {
                     var number1 = Convert.ToDouble(_CalcText.Text.Split('-')[0]);
                     var number2 = Convert.ToDouble(_CalcText.Text.Split('-')[1]);
                     result = number1 - number2;
                 }
-
+                else
+                {
+                    result = Convert.ToDouble(_CalcText.Text);
+                }
                 _CalcText.Text = Convert.ToString(result);
+            }
+        }
+        private void Button_Clear(object sender, RoutedEventArgs e)
+        {
+            if (e.Source is Button button)
+            {
+                _CalcText.Text = string.Empty;
             }
         }
 
@@ -92,10 +98,22 @@ namespace CalcApp
                 {
 
                 }
-            }
-            
+            }         
         }
-
-        
+        private void Button_Answ(object sender, RoutedEventArgs e)
+        {
+            if (e.Source is Button button)
+            {
+                string answer = string.Empty;
+                if (answer == string.Empty)
+                {
+                    answer += _CalcText.Text;
+                }
+                else
+                {
+                    _CalcText.Text += answer;
+                }
+            }   
+        }
     }
 }
