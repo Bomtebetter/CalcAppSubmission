@@ -37,8 +37,15 @@ namespace CalcApp
         {
             if (e.Source is Button button)
             {
+                if (_CalcText.Text != string.Empty)
+                { 
                 var result = Math.Sqrt(Convert.ToDouble(_CalcText.Text));
                 _CalcText.Text = Convert.ToString(result);
+                }
+                else
+                {
+
+                }
             }
         }
         
@@ -85,7 +92,6 @@ namespace CalcApp
                 _CalcText.Text = string.Empty;
             }
         }
-
         private void Button_Del(object sender, RoutedEventArgs e)
         {
             if (e.Source is Button button)
@@ -100,18 +106,25 @@ namespace CalcApp
                 }
             }         
         }
+        public string answer = string.Empty;
+        public int paste = 0;
         private void Button_Answ(object sender, RoutedEventArgs e)
         {
             if (e.Source is Button button)
             {
-                string answer = string.Empty;
                 if (answer == string.Empty)
                 {
-                    answer += _CalcText.Text;
+                    answer = _CalcText.Text;
                 }
-                else
+                else if (answer != string.Empty && paste == 0)
                 {
                     _CalcText.Text += answer;
+                    paste = 1;
+                }
+                else if (paste ==1)
+                {
+                    answer = string.Empty;
+                    paste = 0;
                 }
             }   
         }

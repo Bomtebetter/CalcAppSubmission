@@ -51,7 +51,7 @@
 
         <Button Foreground="#CDD1C4" Background="#4D5061" Click="Button_Click" Grid.Row="7" Grid.Column="1" Content=","/>
         <Button Foreground="#CDD1C4" Background="#4D5061" Click="Button_Click" Grid.Row="7" Grid.Column="2" Content="0"/>
-        <Button Foreground="#CDD1C4" Background="#4D5061" Click="Button_Answ"  Grid.Row="7" Grid.Column="3" Content="copy/paste"/>
+        <Button Foreground="#CDD1C4" Background="#4D5061" Click="Button_Answ"  Grid.Row="7" Grid.Column="3" Content="answ"/>
         <Button Foreground="#CDD1C4" Background="#4D5061" Click="Button_Calc" Grid.Row="7" Grid.Column="4" Content="calc"/>
 
     </Grid>
